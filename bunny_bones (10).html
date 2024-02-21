@@ -107,7 +107,7 @@ p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p
 p,p,p,p,p,p,p,p,p,p,p,p,p,p,p,p
 NAME Bank
 EXT 6,13 2 5,4
-EXT 12,11 3 12,8
+EXT 12,11 3 12,8 DLG b
 EXT 12,8 3 12,11
 PAL 0
 
@@ -595,6 +595,26 @@ NAME key
 DLG 2
 BLIP 2
 
+ITM 2
+00000000
+00111100
+01001110
+01000110
+01000110
+01000010
+00111100
+00000000
+>
+00000000
+00111100
+01000010
+01000110
+01000110
+01001110
+00111100
+00000000
+DLG c
+
 DLG 0
 I'm a cat
 NAME cat dialog
@@ -638,6 +658,23 @@ NAME sprite h dialog
 DLG a
 Neigh!
 NAME sprite j dialog
+
+DLG b
+"""
+{
+  - {item "1"} >= 1 ?
+    {property locked false}
+    The key opens the door!
+  - else ?
+    {property locked true}
+    The door is locked...
+}
+"""
+NAME locked exit 1
+
+DLG c
+You got a gold coin!
+NAME item 2 dialog
 
 VAR a
 42
