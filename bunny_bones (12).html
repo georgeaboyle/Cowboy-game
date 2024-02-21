@@ -85,6 +85,9 @@ d,d,0,o,0,g,0,0,n,0,0,0,0,0,0,0
 0,0,0,0,0,0,0,0,0,0,0,0,d,d,0,0
 0,0,0,0,0,0,0,0,0,0,0,0,d,0,0,0
 NAME Town
+ITM 2 13,9
+ITM 2 2,13
+ITM 2 3,0
 EXT 5,4 3 6,13
 PAL 0
 
@@ -613,7 +616,9 @@ ITM 2
 01001110
 00111100
 00000000
+NAME coin
 DLG c
+BLIP 3
 
 DLG 0
 I'm a cat
@@ -662,12 +667,10 @@ NAME sprite j dialog
 DLG b
 """
 {
-  - {item "1"} >= 1 ?
-    {property locked false}
-    The key opens the door!
+  - {item "2"} >= 10 ?
+    {property locked false}You can afford to open an account!
   - else ?
-    {property locked true}
-    The door is locked...
+    {property locked true}{shk}The door is locked...{/shk} you need 10 coins to open an account!
 }
 """
 NAME locked exit 1
@@ -768,10 +771,10 @@ BEAT 95 0
 SQR P4
 
 BLIP 3
-G#2,E2,A#2
-NAME pick up 1
-ENV 71 125 5 448 72
-BEAT 288 0
+A5,F5,B5
+NAME Coin
+ENV 71 125 5 64 72
+BEAT 32 0
 SQR P2
 
 BLIP 4
@@ -12519,6 +12522,7 @@ CHAR 9835
 011011
 011000
 000000
+</script>
 </script>
 </script>
 
